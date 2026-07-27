@@ -48,7 +48,7 @@ xmlFileInput.addEventListener('change', function(e) {
                 
                 if (chaveMatch) {
                     chaveMatch.forEach(chaveCompleta => {
-                        const fragmentoNota = chaveCompleta.substring(27, 34);
+                        const fragmentoNota = chaveCompleta.substring(28, 35);
                         const notaLimpa = fragmentoNota.trim(); 
                         if (notaLimpa && !notasExtraidasDoXml.includes(notaLimpa)) {
                             notasExtraidasDoXml.push(notaLimpa);
@@ -93,7 +93,7 @@ chaveBipadaInput.addEventListener('input', function() {
     if (chaveApenasNumeros.length === 44) {
         errorBox.style.display = 'none'; 
 
-        const fragmentoBipe = chaveApenasNumeros.substring(24, 34);
+        const fragmentoBipe = chaveApenasNumeros.substring(27, 34);
         const numeroNotaMapeado = fragmentoBipe.trim();
         const numeroNormalizadoBipe = numeroNotaMapeado.replace(/^0+/, '');
 
