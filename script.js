@@ -93,7 +93,7 @@ chaveBipadaInput.addEventListener('input', function() {
     if (chaveApenasNumeros.length === 44) {
         errorBox.style.display = 'none'; 
 
-        const fragmentoBipe = chaveApenasNumeros.substring(24, 34);
+        const fragmentoBipe = chaveApenasNumeros.substring(27, 34);
         const numeroNotaMapeado = fragmentoBipe.trim();
         const numeroNormalizadoBipe = numeroNotaMapeado.replace(/^0+/, '');
 
