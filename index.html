@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrator e Conferidor de XML - DACTE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Leitor e Conferidor (DACTE / CT-e)</h1>
+    
+    <div style="text-align: center; margin-bottom: 20px;">
+        <button id="btnReiniciar" class="btn-refresh">🔄 Reiniciar Conferência</button>
+    </div>
+    
+    <!-- Passo 1: Upload do XML -->
+    <div class="upload-section" id="dropArea">
+        <p><strong>Passo 1:</strong> Selecione ou arraste o arquivo XML da DACTE</p>
+        <input type="file" id="xmlFile" accept=".xml">
+    </div>
+
+    <!-- Passo 2: Campo de Validação por Leitor/Chave -->
+    <div class="check-section">
+        <label for="chaveBipada">Passo 2: Bipe ou digite a Chave da NF-e para conferência</label>
+        <input type="text" id="chaveBipada" placeholder="Cole os 44 dígitos da chave de acesso aqui..." maxlength="44" autofocus>
+    </div>
+
+    <div id="errorBox" class="error-message"></div>
+
+    <!-- Resultados da Extração do XML -->
+    <div id="resultBox" class="result-card">
+        <h2>Dados Extraídos do XML:</h2>
+        
+        <!-- NOVO COMPONENTE: Painel de Progresso e Contagem -->
+        <div class="counter-container">
+            <div class="counter-text">
+                <strong>Progresso da Carga:</strong> 
+                <span id="txtContador">Conferidas: 0 de 0</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="barProgresso" class="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <div class="data-item">
+            <strong>Chave de Acesso CT-e:</strong> 
+            <span id="chaveCte">-</span>
+        </div>
+        
+        <div class="data-item">
+            <strong>Quantidade Total de Volumes:</strong> 
+            <span id="qtdVolumes">-</span>
+        </div>
+
+        <div class="data-item">
+            <strong>Notas Fiscais Vinculadas no XML:</strong>
+            <div id="listaNotas" class="badge-list"></div>
+        </div>
+    </div>
+
+    <!-- Histórico de Notas Lidas pelo Leitor Óptico -->
+    <div id="historyBox" class="history-card" style="display: none; margin-top: 25px;">
+        <h2>Chaves Capturadas pelo Leitor:</h2>
+        <ul id="listaHistorico" class="history-list"></ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="script01.js"></script>
+
+</body>
+</html>

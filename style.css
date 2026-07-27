@@ -1,0 +1,349 @@
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS RESPONSIVAS
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Expandido para Telas Grandes e Panorâmicas */
+.container {
+    background-color: #ffffff;
+    max-width: 1400px; 
+    width: 100%;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 43, 91, 0.08);
+    border-top: 6px solid #004b87;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #004b87;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   ESTRUTURA DE GRID (DUAS COLUNAS PARA TELAS GRANDES)
+   ========================================================================== */
+.dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.col-left, .col-right {
+    width: 100%;
+}
+
+/* ==========================================================================
+   BOTÃO DE REFRESH / REINICIAR CONFERÊNCIA
+   ========================================================================== */
+.btn-refresh {
+    background-color: #004b87;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0, 75, 135, 0.15);
+}
+
+.btn-refresh:hover {
+    background-color: #a6192e;
+}
+
+.btn-refresh:active {
+    transform: scale(0.97);
+}
+
+/* ==========================================================================
+   PASSO 1: ÁREA DE SELEÇÃO DO XML (TOQUE E ARRASTE)
+   ========================================================================== */
+.upload-section {
+    border: 2px dashed #004b87;
+    padding: 50px 25px; /* Caixa expandida */
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f8fafc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.upload-section:hover {
+    border-color: #a6192e;
+    background-color: #f5eff2;
+    box-shadow: 0 0 12px rgba(81, 45, 109, 0.15);
+}
+
+.upload-section p {
+    color: #004b87;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.upload-section strong {
+    color: #a6192e;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* ==========================================================================
+   PASSO 2: CAMPO DE ENTRADA DA CHAVE (BIPE) - CAIXA AMPLIADA
+   ========================================================================== */
+.check-section {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 25px; /* Aumentado o espaçamento interno */
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.check-section label {
+    display: block;
+    font-size: 16px; /* Letras maiores */
+    font-weight: 600;
+    color: #004b87;
+    margin-bottom: 12px;
+}
+
+.check-section input {
+    width: 100%;
+    padding: 18px; /* Caixa muito maior para facilitar visualização */
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 18px; /* Números grandes e nítidos */
+    font-weight: 600;
+    color: #1e293b;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.check-section input:focus {
+    outline: none;
+    border-color: #004b87;
+    box-shadow: 0 0 0 4px rgba(0, 75, 135, 0.1);
+}
+
+/* ==========================================================================
+   BLOCO DE ALERTAS E MENSAGENS DE ERRO
+   ========================================================================== */
+.error-message {
+    color: #a6192e;
+    background-color: #fff5f5;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #f8d7da;
+    font-size: 15px;
+    display: none;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 25px;
+    word-break: break-word;
+}
+
+/* ==========================================================================
+   RESULTADOS EXTRAÍDOS DO XML E PROGRESSO ROBUSTO
+   ========================================================================== */
+.result-card {
+    background-color: #fafafa;
+    padding: 30px; /* Mais área visual */
+    border-radius: 8px;
+    border-left: 6px solid #004b87;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.02);
+    display: none;
+}
+
+.result-card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #004b87;
+}
+
+.counter-container {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.counter-text {
+    font-size: 16px;
+    color: #004b87;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+#txtContador {
+    font-weight: 700;
+    color: #15803d;
+}
+
+/* Barra de progresso mais alta e robusta */
+.progress-bar-bg {
+    background-color: #e2e8f0;
+    width: 100%;
+    height: 24px; /* Altura duplicada para destaque visual */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    background-color: #15803d;
+    width: 0%;
+    height: 100%;
+    border-radius: 12px;
+    transition: width 0.4s ease;
+}
+
+.data-item {
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 1.6;
+    word-break: break-all;
+}
+
+.data-item strong {
+    color: #475569;
+}
+
+/* ==========================================================================
+   BADGES AMPLIADOS (CRACHÁS DE CONFERÊNCIA GRANDES)
+   ========================================================================== */
+.badge-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.badge {
+    color: white;
+    padding: 10px 20px; /* Caixas de notas significativamente maiores */
+    border-radius: 6px;
+    font-size: 15px; /* Fonte ampliada */
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge.falta-conferencia {
+    background-color: #a6192e !important;
+}
+
+.badge.conferida {
+    background-color: #15803d !important;
+}
+
+.badge.conferida::after {
+    content: "✓ Conferida";
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+}
+
+/* ==========================================================================
+   HISTÓRICO DE LEITURAS (NOTAS BIPADAS)
+   ========================================================================== */
+.history-card {
+    background-color: #f8fafc;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid #004b87;
+    margin-top: 25px;
+}
+
+.history-card h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #004b87;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.history-item {
+    background: #ffffff;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #e2e8f0;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-item .chave-original {
+    color: #64748b;
+    font-family: monospace;
+    font-size: 13px;
+    word-break: break-all;
+}
+
+.history-item .nota-extraida {
+    background-color: #e2e8f0;
+    color: #334155;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (GRID DIVIDIDA PARA MONITORES GRANDES)
+   ========================================================================== */
+@media (min-width: 992px) {
+    h1 {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .btn-refresh {
+        width: auto;
+        float: right;
+        margin-top: -55px;
+    }
+
+    .dashboard-grid {
+        flex-direction: row;
+    }
+
+    .col-left {
+        flex: 1; 
+        max-width: 550px; /* Alargado ligeiramente para comportar o input maior */
+    }
+
+    .col-right {
+        flex: 2; 
+    }
+}
