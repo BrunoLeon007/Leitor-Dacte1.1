@@ -48,7 +48,7 @@ xmlFileInput.addEventListener('change', function(e) {
                 
                 if (chaveMatch) {
                     chaveMatch.forEach(chaveCompleta => {
-                        const fragmentoNota = chaveCompleta.substring(28, 34);
+                        const fragmentoNota = chaveCompleta.substring(28, 35);
                         const notaLimpa = fragmentoNota.trim(); 
                         if (notaLimpa && !notasExtraidasDoXml.includes(notaLimpa)) {
                             notasExtraidasDoXml.push(notaLimpa);
